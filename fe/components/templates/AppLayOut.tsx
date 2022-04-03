@@ -22,7 +22,6 @@ interface IUser {
 
 const AppLayOut = ({ children }) => {
   const { data: userData, error } = useSWR<IUser>("/api/user", fetcher);
-  console.log(userData);
   return (
     <>
       <Nav />

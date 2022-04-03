@@ -6,14 +6,7 @@ import Link from "next/link";
 import useSWR from "swr";
 import axios from "axios";
 import { fetcher } from "../../../utils/fether";
-
-interface IUser {
-  isLogin: boolean;
-  info: {
-    email: string;
-    name: string;
-  };
-}
+import { IUser } from "../../../types";
 
 const LoginForm = () => {
   const { mutate } = useSWR<IUser>("/api/user", fetcher);
@@ -21,7 +14,9 @@ const LoginForm = () => {
   const [buttonLoading, setButtonLoading] = useState(false);
 
   const onSubmit = () => {
-    if (!email.trim() || !password.trim()) return;
+    if (!email.trim() || !password.trim()) {
+      return alert("더적어!");
+    }
 
     setButtonLoading(true);
     axios

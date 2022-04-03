@@ -1,7 +1,7 @@
 import { rest } from "msw";
 
 const user= {
-  isLogin: false,
+  isLogin: true,
   info: {
     email: 'zzzwwwrrr66@gmail.com',
     name: 'wooram'

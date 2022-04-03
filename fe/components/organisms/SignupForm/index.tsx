@@ -4,16 +4,9 @@ import { useEffect, useState } from "react";
 import useInput from "../../../utils/useInput";
 import useSWR from "swr";
 import { fetcher } from "../../../utils/fether";
-interface IUser {
-  isLogin: false;
-  info: {
-    email: string;
-    name: string;
-  } | null;
-}
+
 const LoginForm = () => {
   // name, email, password
-  const { mutate } = useSWR<IUser>("/api/user", fetcher);
 
   const onSubmit = () => {
     console.log(userName, email, password, passwordCheck);
