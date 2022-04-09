@@ -5,3 +5,9 @@ export interface IUser {
     name: string;
   } | null;
 }
+
+export interface IFollowData {
+  userId : string,
+  followList: {nickname: string}[],
+  followingList: {nickname: string}[]
+}

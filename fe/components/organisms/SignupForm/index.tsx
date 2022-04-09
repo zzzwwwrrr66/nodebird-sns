@@ -5,7 +5,7 @@ import useInput from "../../../utils/useInput";
 import useSWR from "swr";
 import { fetcher } from "../../../utils/fether";
 
-const LoginForm = () => {
+const SignupFrom = () => {
   // name, email, password
 
   const onSubmit = () => {
@@ -44,4 +44,4 @@ const LoginForm = () => {
     </>
   );
 };
-export default LoginForm;
+export default SignupFrom;

@@ -8,6 +8,13 @@ const user= {
   }
 }
 
+const followData = {
+  userId : 'zzzwwwrrr66@gmail.com',
+  followList: [{nickname: 'a'}, {nickname:'b'}, {nickname: 'c'}],
+  followingList: [{nickname: 'd'}, {nickname:'e'}, {nickname: 'f'}]
+}
+
+
 export const handlers = [
   rest.get('/api/profile', (req, res, ctx) => {
     const productIds = req.url.searchParams.getAll('id')
@@ -46,5 +53,10 @@ export const handlers = [
       )
     }
     
+  }),
+  rest.get('/api/followData', (req, res, ctx) => {
+    return res(
+      ctx.json(followData),
+    )
   }),
 ];
